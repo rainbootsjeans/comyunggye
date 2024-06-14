@@ -12,11 +12,13 @@ GameObject:
   - component: {fileID: 6316432204742606238}
   - component: {fileID: 5507911118104777128}
   - component: {fileID: 5007913275295011435}
-  - component: {fileID: 8318022872555978863}
   - component: {fileID: 6950486778077065161}
+  - component: {fileID: 5354826472453856142}
+  - component: {fileID: 1613678285486257578}
+  - component: {fileID: 1720997638561119074}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,7 +33,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 3, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -103,7 +105,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 2
   m_AngularDrag: 0.05
-  m_GravityScale: 15
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -160,21 +162,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.21, y: 0.38}
   m_EdgeRadius: 0
---- !u!114 &8318022872555978863
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2532298729270116115}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dea6b4b87401f4b4787f7f96de7f5a04, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementSpeed: 200
-  jumpPower: 50
-  isGround: 0
 --- !u!95 &6950486778077065161
 Animator:
   serializedVersion: 5
@@ -196,3 +183,49 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5354826472453856142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2532298729270116115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8ad6fded592e7149a08bed0a8801801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1613678285486257578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2532298729270116115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96f50e96057607e4b938e9564f863466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scanRange: 1
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  nearestTarget: {fileID: 0}
+--- !u!114 &1720997638561119074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2532298729270116115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 990829dcd301e7741b037c3f3608efa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 300
+  jumpPower: 8
+  isGround: 0
+  isRoll: 0
+  rollPower: 4
