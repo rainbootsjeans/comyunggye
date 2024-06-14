@@ -70,7 +70,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpPower = 8f;
     void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.Space)&&isGround)
+        if (Input.GetKey(KeyCode.Space)&&isGround)
         {
             if (anim.GetBool("isRoll")||anim.GetBool("isAttack"))
                 return;
@@ -81,8 +81,8 @@ public class PlayerMovement : MonoBehaviour
     public bool isGround;
     void onGround()
     {
-        Debug.DrawRay(rigid.position+new Vector2(-0.205f,-0.397f),new Vector3(0.41f,0,0),new Color(1,0,0));
-        RaycastHit2D hit = Physics2D.Raycast(rigid.position+new Vector2(-0.205f,-0.397f),new Vector3(0.41f,0,0), 1, LayerMask.GetMask("Ground"));
+        Debug.DrawRay(rigid.position+new Vector2(-0.52f,-0.97f),new Vector3(1.04f,0,0),new Color(1,0,0));
+        RaycastHit2D hit = Physics2D.Raycast(rigid.position+new Vector2(-0.52f,-0.97f),new Vector3(1.04f,0,0), 1, LayerMask.GetMask("Ground"));
         if (hit.collider != null)
         {
             isGround = true;
@@ -100,7 +100,7 @@ public class PlayerMovement : MonoBehaviour
     public float rollPower = 4f;
     void Roll()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift)&&isGround)
+        if (Input.GetKey(KeyCode.LeftShift)&&isGround)
         {
             if (anim.GetBool("isRoll")||anim.GetBool("isJump")||anim.GetBool("isAttack"))
                 return;

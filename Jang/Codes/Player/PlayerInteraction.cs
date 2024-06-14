@@ -26,11 +26,15 @@ public class PlayerInteraction : MonoBehaviour
     public LayerMask targetLayer;
     public RaycastHit2D[] targets;
     public Transform nearestTarget;
-    public Transform result;
     void searchObject()
     {
         targets = Physics2D.CircleCastAll(transform.position, scanRange, Vector2.zero, 0, targetLayer);
         float diff = 100;
+
+        if (targets.GetLength(0)==0)
+        {
+            nearestTarget = null;
+        }
 
         foreach (RaycastHit2D target in targets)
         {
@@ -41,15 +45,8 @@ public class PlayerInteraction : MonoBehaviour
             if(curDiff < diff)
             {
                 diff = curDiff;
-                result = target.transform;
+                nearestTarget = target.transform;
             }
-        }
-    }
-    void interaction()
-    {
-        if(Input.GetKeyDown(KeyCode.F)&&result!=null)
-        {
-            result.GetComponent<Interaction>().interaction();
         }
     }
 }
